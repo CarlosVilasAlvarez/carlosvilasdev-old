@@ -1,0 +1,7 @@
+@import '../../styles/variables.scss';
+
+.header {
+    @media (max-width: $desktop) {
+        display: none !important;
+    }
+}
