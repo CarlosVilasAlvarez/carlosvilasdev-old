@@ -1,8 +1,10 @@
+import Link from 'next/link';
+
 function HomePage(): JSX.Element {
     return (
-        <div>
-            <h1>Home Page</h1>
-        </div>
+        <Link href="/blog">
+            <a>Blog</a>
+        </Link>
     );
 }
 
