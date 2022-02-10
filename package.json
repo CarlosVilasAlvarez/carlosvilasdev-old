@@ -1,4 +1,17 @@
 {
+  "name": "carlosvilasdev",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Carlos Vilas Álvarez",
+  "description": "Personal website",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosVilasAlvarez/carlosvilasdev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CarlosVilasAlvarez/carlosvilasdev/issues"
+  },
+  "homepage": "https://github.com/CarlosVilasAlvarez/carlosvilasdev#readme",
   "dependencies": {
     "gray-matter": "^4.0.3",
     "marked": "^4.0.12",
