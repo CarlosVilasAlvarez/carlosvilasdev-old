@@ -1,23 +1,34 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { getAllSlugs, getPostBySlug } from '../../../lib/blogApi';
 
-export default function Post({ title }: { title: string }): JSX.Element {
+export default function Post({ title, content }: { title: string; content: string }): JSX.Element {
     return (
         <div>
             <h1>{title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: content }}></div>
         </div>
     );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const paths = [{ params: { slug: 'post-1' } }, { params: { slug: 'post-2' } }];
+    const slugs = await getAllSlugs();
+    const paths = slugs.map((slug) => {
+        return {
+            params: {
+                slug,
+            },
+        };
+    });
 
     return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
+    const post = await getPostBySlug(context.params.slug as string);
     return {
         props: {
-            title: `${context.params.slug}`,
+            title: post.metadata.title,
+            content: post.content,
         },
     };
 };
