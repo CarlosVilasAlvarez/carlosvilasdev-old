@@ -1,38 +1,48 @@
 {
   "name": "carlosvilasdev",
   "version": "1.0.0",
-  "description": "My personal webb",
-  "main": "src/server.js",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "standard 'src/**/*.js'",
-    "prepare": "husky install"
-  },
+  "license": "MIT",
+  "author": "Carlos Vilas Álvarez",
+  "description": "Personal website",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CarlosVilasAlvarez/carlosvilasdev.git"
   },
-  "author": "Carlos Vilas Álvarez",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/CarlosVilasAlvarez/carlosvilasdev/issues"
   },
   "homepage": "https://github.com/CarlosVilasAlvarez/carlosvilasdev#readme",
-  "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0",
-    "husky": "^7.0.4",
-    "standard": "^16.0.4"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
   "dependencies": {
-    "next": "^12.0.7",
+    "gray-matter": "^4.0.3",
+    "marked": "^4.0.12",
+    "next": "^12.0.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.2",
+    "@types/marked": "^4.0.2",
+    "@types/node": "^16.11.6",
+    "@types/react": "^17.0.34",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "prettier": "^2.4.1",
+    "sass": "^1.49.0",
+    "typescript": "^4.4.4"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest --watch",
+    "prepare": "husky install",
+    "prettier-check": "prettier --check '**/*.{js,ts,tsx}'",
+    "prettier-write": "prettier --write '**/*.{js,ts,tsx}'"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": "14.18.1"
   }
 }
