@@ -10,6 +10,7 @@ type PostMetadata = {
     description: string;
     published_date: string;
     latest_update: string;
+    card_image: string;
     tags: string[];
 };
 

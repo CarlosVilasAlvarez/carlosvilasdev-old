@@ -5,6 +5,7 @@ type BlogPostCardProps = {
     title: string;
     description: string;
     published_date: string;
+    card_image: string;
 };
 
 function BlogPostCard({
@@ -12,9 +13,11 @@ function BlogPostCard({
     title,
     description,
     published_date,
+    card_image,
 }: BlogPostCardProps): JSX.Element {
     return (
         <div className={styles.blogPostCard}>
+            <img src={card_image} alt={`Image of the post ${title}`} />
             <h2>{title}</h2>
             <p>{description}</p>
             <p>{published_date}</p>

@@ -13,9 +13,11 @@ function BlogHome({ posts }: BlogHomeProps): JSX.Element {
             {posts.map((post) => {
                 return (
                     <BlogPostCard
+                        key={post.slug}
                         slug={post.slug}
                         title={post.metadata.title}
                         description={post.metadata.description}
+                        card_image={post.metadata.card_image}
                         published_date={post.metadata.published_date}
                     />
                 );
