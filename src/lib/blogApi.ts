@@ -10,7 +10,14 @@ type PostMetadata = {
     description: string;
     published_date: string;
     latest_update: string;
+    card_image: string;
     tags: string[];
+};
+
+export type Post = {
+    slug: string;
+    metadata: PostMetadata;
+    content: string;
 };
 
 export async function getAllSlugs() {
@@ -22,7 +29,7 @@ export async function getAllSlugs() {
     return slugs;
 }
 
-export async function getAllPosts() {
+export async function getAllPosts(): Promise<Post[]> {
     const slugs = await getAllSlugs();
     const post_promises = slugs.map((slug) => {
         return getPostBySlug(slug);
@@ -31,7 +38,7 @@ export async function getAllPosts() {
     return posts;
 }
 
-export async function getPostBySlug(slug: string) {
+export async function getPostBySlug(slug: string): Promise<Post> {
     const post = await readFile(`${BLOG_FOLDER}/${slug}.md`);
     const { data: metadata, content } = matter(post);
     const html_content = marked.parse(content);

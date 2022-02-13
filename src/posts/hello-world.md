@@ -3,6 +3,7 @@ title: How To Run AB Tests In React
 description: 4 options I came across
 published_date: 2021/02/14
 latest_update: null
+card_image: 'https://i.pinimg.com/originals/a7/fc/aa/a7fcaa43650adc892c401956a08dc32a.jpg'
 tags:
     - react
     - ab testing
