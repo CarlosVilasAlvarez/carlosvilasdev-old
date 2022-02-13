@@ -1,0 +1,51 @@
+.post_card__link_wrapper {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+.post_card {
+    display: flex;
+    flex-flow: column wrap;
+    background-color: gray;
+    border-radius: 30px;
+    width: 19.86rem;
+    height: 30.7rem;
+
+    .post_image_wrapper {
+        height: 11.9rem;
+        width: 100%;
+        border-top-right-radius: inherit;
+        border-top-left-radius: inherit;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-right-radius: inherit;
+            border-top-left-radius: inherit;
+        }
+    }
+
+    .post_card_body {
+        width: 90%;
+        margin: 0 auto;
+        flex: 5;
+
+        h2 {
+            font-size: 1.4rem;
+            padding: 2rem 0 1rem 0;
+        }
+
+        .post_description {
+            font-size: 1.1rem;
+        }
+    }
+
+    .post_footer {
+        flex: 2;
+        width: 100%;
+        border-bottom-right-radius: inherit;
+        border-bottom-left-radius: inherit;
+    }
+}

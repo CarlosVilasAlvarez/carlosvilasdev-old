@@ -1,4 +1,5 @@
 import styles from './blogpostcard.module.scss';
+import Link from 'next/link';
 
 type BlogPostCardProps = {
     slug: string;
@@ -16,13 +17,22 @@ function BlogPostCard({
     card_image,
 }: BlogPostCardProps): JSX.Element {
     return (
-        <div className={styles.blogPostCard}>
-            <img src={card_image} alt={`Image of the post ${title}`} />
-            <h2>{title}</h2>
-            <p>{description}</p>
-            <p>{published_date}</p>
-            <a href={`/blog/${slug}`}>Read more</a>
-        </div>
+        <Link href={`/blog/posts/${slug}`}>
+            <a className={styles.post_card__link_wrapper}>
+                <div className={styles.post_card}>
+                    <div className={styles.post_image_wrapper}>
+                        <img src={card_image} alt={`Image of the post ${title}`} />
+                    </div>
+                    <div className={styles.post_card_body}>
+                        <h2>{title}</h2>
+                        <p className={styles.post_description}>{description}</p>
+                    </div>
+                    <div className={styles.post_footer}>
+                        <p>{published_date}</p>
+                    </div>
+                </div>
+            </a>
+        </Link>
     );
 }
 
