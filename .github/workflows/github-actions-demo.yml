@@ -10,20 +10,19 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v2
         with:
-          node-version: '14.18.1'
+          node-version: 'lts/fermium'
 
       - name: Check or build cache
         uses: actions/cache@v2
         id: npm-cache
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
 
       - name: Install dependencies
         if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm install
+        run: npm ci --ignore-scripts
 
       - name: Run tests
         run: npm test
