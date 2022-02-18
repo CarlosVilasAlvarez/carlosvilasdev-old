@@ -13,12 +13,11 @@ jobs:
           node-version: 'lts/fermium'
 
       - name: Check or build cache
-        uses: actions/cache@v2
         id: npm-cache
+        uses: actions/cache@v2
         with:
-          path: ~/.npm
+          path: node_modules
           key: npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: npm-
 
       - name: Install dependencies
         if: steps.npm-cache.outputs.cache-hit != 'true'
