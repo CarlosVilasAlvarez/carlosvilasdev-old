@@ -36,7 +36,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "prepare": "husky install",
     "prettier-check": "prettier --check '**/*.{js,ts,tsx}'",
     "prettier-write": "prettier --write '**/*.{js,ts,tsx}'"
