@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "test-post-1",
+    "metadata": {
+      "title": "Test Post 1",
+      "description": "This is the first test post",
+      "card_image": "https://via.placeholder.com/300x200",
+      "latest_update": "2020-01-01",
+      "tags": ["test", "blog"],
+      "published_date": "2020-01-01"
+    },
+    "content": ""
+  },
+  {
+    "slug": "test-post-2",
+    "metadata": {
+      "title": "Test Post 2",
+      "description": "This is the second test post",
+      "latest_update": "2020-01-01",
+      "tags": ["test", "blog"],
+      "card_image": "https://via.placeholder.com/300x200",
+      "published_date": "2020-01-01"
+    },
+    "content": ""
+  }
+]
