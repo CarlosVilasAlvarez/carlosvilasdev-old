@@ -1,7 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { getAllSlugs, getPostBySlug } from '../../../lib/blogApi';
 
-export default function Post({ title, content }: { title: string; content: string }): JSX.Element {
+export default function PostPage({
+    title,
+    content,
+}: {
+    title: string;
+    content: string;
+}): JSX.Element {
     return (
         <div>
             <h1>{title}</h1>
