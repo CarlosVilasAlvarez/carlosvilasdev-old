@@ -13,3 +13,10 @@ $breakpoint_lg: 1200px;
 
 // Font
 $font_family_base: 'Roboto', sans-serif;
+
+// Class utils
+.container {
+    max-width: $breakpoint_lg;
+    width: 90%;
+    margin: 0 auto;
+}
