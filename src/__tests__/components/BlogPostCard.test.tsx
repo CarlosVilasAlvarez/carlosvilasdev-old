@@ -12,6 +12,7 @@ describe('BlogPostCard component test', () => {
         description: mocked_post.metadata.description,
         published_date: mocked_post.metadata.published_date,
         card_image: mocked_post.metadata.card_image,
+        author: mocked_post.metadata.author,
     };
 
     it('links to the post page', () => {
@@ -21,6 +22,10 @@ describe('BlogPostCard component test', () => {
 
     it('has a preview image of the post', () => {
         const { getByRole } = render(<BlogPostCard {...props} />);
-        expect(getByRole('img')).toHaveAttribute('src', mocked_post.metadata.card_image);
+        expect(getByRole('img')).toBeInTheDocument();
+        expect(getByRole('img')).toHaveAttribute(
+            'alt',
+            `Image of the post ${mocked_post.metadata.title}`
+        );
     });
 });

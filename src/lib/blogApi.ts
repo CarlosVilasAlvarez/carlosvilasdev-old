@@ -12,6 +12,7 @@ type PostMetadata = {
     latest_update: string;
     card_image: string;
     tags: string[];
+    author: string;
 };
 
 export type Post = {

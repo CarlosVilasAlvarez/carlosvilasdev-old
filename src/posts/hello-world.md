@@ -1,9 +1,11 @@
 ---
-title: How To Run AB Tests In React
-description: 4 options I came across
+title: How to run AB tests in React
+description: 'In this post we explain how to carefully create different views for your users in order to launch new features
+or collect feedback before taking a final decision'
 published_date: 2021/02/14
 latest_update: null
-card_image: 'https://i.pinimg.com/originals/a7/fc/aa/a7fcaa43650adc892c401956a08dc32a.jpg'
+card_image: https://via.placeholder.com/500
+author: Carlos
 tags:
     - react
     - ab testing

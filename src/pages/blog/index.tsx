@@ -19,6 +19,7 @@ function BlogHome({ posts }: BlogHomeProps): JSX.Element {
                         description={post.metadata.description}
                         card_image={post.metadata.card_image}
                         published_date={post.metadata.published_date}
+                        author={post.metadata.author}
                     />
                 );
             })}
