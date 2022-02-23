@@ -7,7 +7,8 @@
       "card_image": "https://via.placeholder.com/300x200",
       "latest_update": "2020-01-01",
       "tags": ["test", "blog"],
-      "published_date": "2020-01-01"
+      "published_date": "2020-01-01",
+      "author": "Test Author"
     },
     "content": ""
   },
@@ -19,7 +20,8 @@
       "latest_update": "2020-01-01",
       "tags": ["test", "blog"],
       "card_image": "https://via.placeholder.com/300x200",
-      "published_date": "2020-01-01"
+      "published_date": "2020-01-01",
+      "author": "Test Author"
     },
     "content": ""
   }
