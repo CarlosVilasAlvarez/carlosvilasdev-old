@@ -8,9 +8,6 @@ type SelectProps = {
 export default function Select({ categories, onChange }: SelectProps) {
     return (
         <select name="post_categories" className={styles.select} onChange={onChange}>
-            <option key="all" value="all">
-                All
-            </option>
             {categories.map((category) => {
                 return (
                     <option key={category} value={category}>

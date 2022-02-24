@@ -12,6 +12,7 @@ type BlogHomeProps = {
 function BlogHome({ posts }: BlogHomeProps): JSX.Element {
     const [displayed_posts, setDisplayedPosts] = useState(posts);
     const categories = Array.from(new Set(posts.map((post) => post.metadata.tags).flat()));
+    categories.unshift('all'); // Add 'all' category to the beginning of the array so it's displayed in the select by default
 
     const onCategorySelect = (event: React.ChangeEvent<HTMLSelectElement>): void => {
         const selected_category = event.target.value;
