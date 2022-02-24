@@ -29,6 +29,7 @@ function BlogPostCard({
                             alt={`Image of the post ${title}`}
                             layout="fill"
                             objectFit="cover"
+                            priority
                         />
                     </div>
                     <div className={styles.post_card_body}>
