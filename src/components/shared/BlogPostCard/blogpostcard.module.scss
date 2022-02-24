@@ -48,6 +48,11 @@
             width: 90%;
             margin: 0 auto;
 
+            p {
+                border-left: 2px solid $color_secondary;
+                padding-left: 0.75rem;
+            }
+
             p:first-child {
                 font-size: 0.938rem;
                 font-weight: 500;
