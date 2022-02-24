@@ -7,8 +7,8 @@ latest_update: null
 card_image: https://via.placeholder.com/500
 author: Carlos
 tags:
-    - react
-    - ab testing
+    - test1
+    - test2
 ---
 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 1')
