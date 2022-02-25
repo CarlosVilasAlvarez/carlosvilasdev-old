@@ -3,6 +3,13 @@
 .blog_page {
     @extend .container;
 
+    .filters_section {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+
     .grid_wrapper {
         display: flex;
 
