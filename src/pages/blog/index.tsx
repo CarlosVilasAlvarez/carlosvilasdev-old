@@ -4,8 +4,8 @@ import { getAllPosts, Post } from '../../lib/blogApi';
 import styles from './index.module.scss';
 import Select from '../../components/shared/Select/Select';
 import FullTextSearch from '../../components/shared/FullTextSearch/FullTextSearch';
-import { useState } from 'react';
-import MiniSearch from 'minisearch';
+import { useEffect, useState } from 'react';
+import { PostsSearchEngineInMemory } from '../../lib/searchEngine';
 
 type BlogHomeProps = {
     posts: Post[];
@@ -13,9 +13,15 @@ type BlogHomeProps = {
 
 function BlogHome({ posts }: BlogHomeProps): JSX.Element {
     const [displayed_posts, setDisplayedPosts] = useState(posts);
+    const [search_engine, setSearchEngine] = useState(new PostsSearchEngineInMemory());
+
+    // Get all the different categories and display "all" as default
     const categories = Array.from(new Set(posts.map((post) => post.metadata.tags).flat()));
-    // Add 'all' category to the beginning of the array so it's displayed in the select by default
     categories.unshift('all');
+
+    useEffect(() => {
+        search_engine.indexAll(posts);
+    }, []);
 
     // Handle the change of categories in select element
     const onCategorySelect = (event: React.ChangeEvent<HTMLSelectElement>): void => {
@@ -29,38 +35,21 @@ function BlogHome({ posts }: BlogHomeProps): JSX.Element {
         }
     };
 
-    const mini_search = new MiniSearch({
-        idField: 'slug',
-        fields: ['title', 'description', 'author', 'tags', 'content'],
-        storeFields: ['slug'],
-        extractField: (document, fieldName) => {
-            if (['title', 'description', 'author', 'tags'].includes(fieldName)) {
-                return document.metadata[fieldName];
-            }
-            return document[fieldName];
-        },
-    });
-    mini_search.addAll(posts);
-
-    let is_timing_out = false;
-    let last_time_out: NodeJS.Timeout;
+    // Handle input in the select using at the same time the engine (timeouts used to wait for the input to be typed)
+    let typing_timeout: NodeJS.Timeout;
     const onSearchInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-        if (is_timing_out) {
-            clearTimeout(last_time_out);
-        }
+        clearTimeout(typing_timeout);
 
         if (event.target.value === '' || event.target.value.length <= 3) {
             setDisplayedPosts(posts);
             return;
         }
 
-        is_timing_out = true;
-        last_time_out = setTimeout(() => {
-            let results = mini_search.search(event.target.value);
+        typing_timeout = setTimeout(async () => {
+            let results = await search_engine.search(event.target.value);
             setDisplayedPosts(
-                posts.filter((post) => results.some((result) => result.slug === post.slug))
+                posts.filter((post) => results.some((result: any) => result.slug === post.slug))
             );
-            is_timing_out = false;
         }, 650);
     };
 
