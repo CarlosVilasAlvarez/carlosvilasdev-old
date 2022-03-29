@@ -11,6 +11,9 @@ jest.mock('../../components/shared/Select/Select', () => () => (
         <option value="test">test</option>
     </select>
 ));
+jest.mock('../../components/shared/FullTextSearch/FullTextSearch', () => () => (
+    <input type="text" role="search"></input>
+));
 
 describe('HomePage page test', () => {
     it('getStaticProps returns an array of posts', async () => {
@@ -25,9 +28,10 @@ describe('HomePage page test', () => {
         });
     });
 
-    it('renders the blog posts and a select', () => {
+    it('renders the blog posts and a select and search inputs', () => {
         render(<BlogHome posts={mocked_posts} />);
         expect(screen.getAllByText('Blog Post')).toHaveLength(mocked_posts.length);
         expect(screen.getByRole('combobox')).toBeInTheDocument();
+        expect(screen.getByRole('search')).toBeInTheDocument();
     });
 });
