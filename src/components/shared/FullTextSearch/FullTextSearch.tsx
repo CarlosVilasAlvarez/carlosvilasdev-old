@@ -13,7 +13,7 @@ export default function FullTextSearch({ onInput, searchInProgress }: FullTextSe
             role="search"
             placeholder="Search"
             size={25}
-            onInput={onInput}
+            onChange={onInput}
         />
     );
 }
