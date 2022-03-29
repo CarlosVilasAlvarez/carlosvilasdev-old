@@ -16,7 +16,6 @@ function BlogHome({ posts }: BlogHomeProps): JSX.Element {
     const [displayed_posts, setDisplayedPosts] = useState(posts);
     const [search_engine, setSearchEngine] = useState(new PostsSearchEngineInMemory());
     const [searchInProgress, setSearchInProgress] = useState(false);
-    console.log('rerender');
 
     // Get all the different categories and display "all" as default
     const categories = Array.from(new Set(posts.map((post) => post.metadata.tags).flat()));
