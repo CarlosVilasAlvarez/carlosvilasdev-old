@@ -15,13 +15,14 @@ type BlogHomeProps = {
 function BlogHome({ posts }: BlogHomeProps): JSX.Element {
     const [displayed_posts, setDisplayedPosts] = useState(posts);
     const [search_engine, setSearchEngine] = useState(new PostsSearchEngineInMemory());
-    const [userIsSearching, setUserIsSearching] = useState(false);
+    const [searchInProgress, setSearchInProgress] = useState(false);
     console.log('rerender');
 
     // Get all the different categories and display "all" as default
     const categories = Array.from(new Set(posts.map((post) => post.metadata.tags).flat()));
     categories.unshift('all');
 
+    // Use useEffect to avoid indexing on every page rerender
     useEffect(() => {
         search_engine.indexAll(posts);
     }, []);
@@ -42,18 +43,19 @@ function BlogHome({ posts }: BlogHomeProps): JSX.Element {
     const searchHandler = async (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.value === '') {
             setDisplayedPosts(posts);
-            setUserIsSearching(false);
+            setSearchInProgress(false);
             return;
         }
         let results = await search_engine.search(event.target.value);
         setDisplayedPosts(
             posts.filter((post) => results.some((result: any) => result.slug === post.slug))
         );
-        setUserIsSearching(false);
+        setSearchInProgress(false);
     };
     const debouncedSearchHandler = useCallback(debounce(searchHandler, 700), []);
+
     const onSearchInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if (!userIsSearching) setUserIsSearching(true);
+        if (!searchInProgress) setSearchInProgress(true);
         debouncedSearchHandler(event);
     };
 
@@ -61,9 +63,8 @@ function BlogHome({ posts }: BlogHomeProps): JSX.Element {
         <main className={styles.blog_page}>
             <div className={styles.filters_section}>
                 <Select categories={categories} onChange={onCategorySelect} />
-                <FullTextSearch onInput={onSearchInputChange} />
+                <FullTextSearch onInput={onSearchInputChange} searchInProgress={searchInProgress} />
             </div>
-            {userIsSearching && <p>LOADING</p>}
             <div className={styles.grid_wrapper}>
                 <div className={styles.posts_grid}>
                     {displayed_posts.map((post) => {

@@ -18,6 +18,11 @@
     background-position: center;
     background-position-x: 90%;
 
+    &.searching {
+        background-image: url('/loading.svg');
+        background-size: auto 40%;
+    }
+
     &::placeholder {
         color: inherit;
     }
