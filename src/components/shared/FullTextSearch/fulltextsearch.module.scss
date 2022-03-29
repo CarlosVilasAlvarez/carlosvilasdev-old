@@ -1,0 +1,29 @@
+@import '../../../styles/utils';
+
+.search {
+    padding: 0.85rem 3rem 0.85rem 0.95rem;
+    border-radius: 15px;
+    background-color: $color_primary_contrast;
+    color: $color_secondary;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 400;
+    outline: none;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('/search-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: 90%;
+
+    &.searching {
+        background-image: url('/loading.svg');
+        background-size: auto 40%;
+    }
+
+    &::placeholder {
+        color: inherit;
+    }
+}
