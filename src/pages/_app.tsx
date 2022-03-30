@@ -7,7 +7,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     return (
         <>
             <Head>
-                <title>carlosvilas.dev</title>
+                <title>Carlos Vilas Álvarez</title>
+                <link rel="shortcut icon" href="/favicon/favicon.svg" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             <Component {...pageProps} />
