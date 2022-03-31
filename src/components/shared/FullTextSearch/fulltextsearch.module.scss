@@ -13,13 +13,13 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-image: url('/search-icon.svg');
+    background-image: url('/icons/search-icon.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-position-x: 90%;
 
     &.searching {
-        background-image: url('/loading.svg');
+        background-image: url('/icons/loading.svg');
         background-size: auto 40%;
     }
 
