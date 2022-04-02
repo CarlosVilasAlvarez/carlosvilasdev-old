@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import '../styles/reset.css';
 import '../styles/globals.scss';
+import '../styles/prism-theme.scss';
 import Head from 'next/head';
 
 function MyApp({ Component, pageProps }: AppProps) {

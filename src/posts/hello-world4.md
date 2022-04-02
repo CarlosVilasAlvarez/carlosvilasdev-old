@@ -39,10 +39,14 @@ Latona** colonos, solet eademque sonitusque optat ardent, quantus. Quae quam,
 medius vidit centum Denique, dat habitanda satis trepidans excidit te cornua
 thalamos: _duxere_, haud. Sinu rectoque pati tuas colorem, cursu.
 
-    character(drive(bluetooth));
-    mamp_us(bounceCursorSan);
-    errorFileEnd.xml_simplex_gate(cisc(characterCorePython, hertz, yottabyte),
-            control_record(processor_iso_cd));
+```javascript
+character(drive(bluetooth));
+mamp_us(bounceCursorSan);
+errorFileEnd.xml_simplex_gate(
+    cisc(characterCorePython, hertz, yottabyte),
+    control_record(processor_iso_cd)
+);
+```
 
 Erigdupum cadavera rogantis, prosecta ab iustae pater sum diu qui. **Quod** est
 fleverunt vocem numerumque auxilium, hanc in
