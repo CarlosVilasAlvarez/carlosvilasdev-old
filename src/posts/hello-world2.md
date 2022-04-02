@@ -13,8 +13,6 @@ tags:
 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 1')
 
-# Se his solvente inveni crepitantibus quisquis eris
-
 ## Sub aera cervice Oceano procul manus Exadius
 
 Lorem markdownum sanguine venire latus responsaque quoque ut periuria artificem
