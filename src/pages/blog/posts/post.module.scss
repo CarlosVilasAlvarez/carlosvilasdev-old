@@ -54,5 +54,31 @@
         .markdown_content {
             @extend .markdown;
         }
+
+        .post_social_share {
+            margin-bottom: 2rem;
+            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            p {
+                text-align: center;
+            }
+
+            .social_links {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                width: 50%;
+                margin: 0 auto;
+                margin-top: 2rem;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
     }
 }

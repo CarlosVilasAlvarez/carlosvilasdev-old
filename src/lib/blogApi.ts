@@ -10,7 +10,6 @@ marked.setOptions({
     highlight: (code, lang) => {
         if (languages[lang]) {
             const highlighted = highlight(code, languages[lang], lang);
-            console.log(highlighted);
             return highlighted;
         } else {
             return code;
