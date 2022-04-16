@@ -1,0 +1,52 @@
+.markdown {
+    h2 {
+        font-size: 1.35rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    ol {
+        list-style: circle;
+        list-style-position: inside;
+        margin-bottom: 0.75rem;
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    pre {
+        background-color: hsl(220, 13%, 18%);
+        color: hsl(220, 14%, 71%);
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        font-family: 'Fira Code', 'Fira Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+        direction: ltr;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        line-height: 1.5;
+        -moz-tab-size: 2;
+        -o-tab-size: 2;
+        tab-size: 2;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+
+        padding: 1rem;
+        border-radius: 10px;
+        margin-bottom: 0.75rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: yellow;
+    }
+}

@@ -1,0 +1,84 @@
+@import '../../../styles/utils';
+@import '../../../styles/markdown';
+
+.post_page {
+    @extend .container;
+
+    .back_link {
+        display: flex;
+
+        color: inherit;
+        text-decoration: none;
+        font-size: 1.125rem;
+        font-weight: 500;
+
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+
+        .back_icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: url('/icons/arrow-back.svg') no-repeat center;
+            margin-right: 0.75rem;
+        }
+    }
+
+    .post_box {
+        background-color: $color_primary;
+        filter: drop-shadow($primary_drop_shadow);
+        border-radius: 40px;
+        // Overflow to prevent child overflowing the border radius
+        overflow: hidden;
+
+        h1 {
+            font-size: 1.875rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+
+        .post_image {
+            height: 400px;
+            width: 100%;
+            position: relative;
+        }
+
+        .post_body {
+            @extend .container;
+            width: 85%;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+
+        .markdown_content {
+            @extend .markdown;
+        }
+
+        .post_social_share {
+            margin-bottom: 2rem;
+            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            p {
+                text-align: center;
+            }
+
+            .social_links {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                width: 50%;
+                margin: 0 auto;
+                margin-top: 2rem;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}

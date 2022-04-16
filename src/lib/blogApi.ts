@@ -2,8 +2,20 @@ import { readdir, readFile } from 'fs/promises';
 import { basename } from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
+import { languages, highlight } from 'prismjs';
 
 const BLOG_FOLDER = `${process.cwd()}/src/posts`;
+
+marked.setOptions({
+    highlight: (code, lang) => {
+        if (languages[lang]) {
+            const highlighted = highlight(code, languages[lang], lang);
+            return highlighted;
+        } else {
+            return code;
+        }
+    },
+});
 
 type PostMetadata = {
     title: string;
@@ -43,6 +55,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     const post = await readFile(`${BLOG_FOLDER}/${slug}.md`);
     const { data: metadata, content } = matter(post);
     const html_content = marked.parse(content);
+
     return {
         slug,
         metadata: metadata as PostMetadata,
